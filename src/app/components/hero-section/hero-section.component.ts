@@ -17,20 +17,27 @@ import { Router } from '@angular/router';
     trigger('navbarFadeIn', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-20px)' }),
-        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0px)' })),
+        animate('900ms ease-out', style({ opacity: 1, transform: 'translateY(0px)' })),
       ])
     ]),
-    trigger('hover', [
+    trigger('heroFadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        animate('1200ms ease-out', style({ opacity: 1, transform: 'translateY(0px)' })),
+      ])
+    ]),
+    //hover buttons
+    trigger('hoverNavBtn', [
       state('hovered', style({ color: 'white'})),
       state('normal', style({color: 'gray'})),
       transition("normal <=> hovered", animate('300ms ease-in-out'))
-    ])
+    ]),
 
   ]
 })
 
 export class HeroSectionComponent {
-  private _title : string = "OptiFlow";
+  private _title : string = "SpotTrack";
   btnStates = Array.from({ length: 4 }, () => signal<'normal' | 'hovered'>('normal'));
 
   get Title() {
