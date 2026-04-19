@@ -1,0 +1,29 @@
+<main class ="hero-section">
+  <header [@headerFadeIn] class = "hero-header">
+    <h1>{{ Title }}</h1>
+    <nav [@navbarFadeIn] class = "hero-navbar">
+      <button [@hover]="btnStates[0]()" (mouseenter)="btnStates[0].set('hovered')" (mouseleave)="btnStates[0].set('normal'
+      )" class = "navbar-button">
+        Sobre Nosotros
+      </button>
+
+      <button
+        [@hover]="btnStates[1]()"
+        (mouseenter)="btnStates[1].set('hovered')"
+        (mouseleave)="btnStates[1].set('normal')"
+        class="navbar-button">Features</button>
+
+      <button
+        [@hover]="btnStates[2]()"
+        (mouseenter)="btnStates[2].set('hovered')"
+        (mouseleave)="btnStates[2].set('normal')"
+        class="navbar-button">Planes</button>
+
+      <button
+        [@hover]="btnStates[3]()"
+        (mouseenter)="btnStates[3].set('hovered')"
+        (mouseleave)="btnStates[3].set('normal')"
+        class="navbar-button">Contáctanos</button>
+    </nav>
+  </header>
+</main>
