@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
-import { MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-language-switcher',
-  imports: [MatButtonToggleGroup],
+  imports: [MatButtonToggleGroup, MatButtonToggle],
   templateUrl: './language-switcher.html',
   styleUrl: './language-switcher.css',
 })
 export class LanguageSwitcher {
   currentLang = 'en';
-  languages =['en', 'es'];
+  languages = ['en', 'es'];
 
-  constructor(private translate: TranslateService){
-    this.currentLang = this.translate.getCurrentLang();
+  constructor(private translate: TranslateService) {
+    this.currentLang = this.translate.currentLang ?? this.translate.getDefaultLang();
   }
 
-  useLanguage(language: string){
+  useLanguage(language: string) {
     this.translate.use(language);
   }
 }

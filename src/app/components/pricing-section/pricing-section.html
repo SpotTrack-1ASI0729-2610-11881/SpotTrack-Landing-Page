@@ -1,25 +1,48 @@
+<section class="pricing-section">
+  <h2 class="pricing-title">{{ 'pricing.title' | translate }}</h2>
 
-<section class = "pricing">
-  <mat-card class = "basic-plan">
-    <h3> Basic plan</h3>
-    <h4> $69/mes</h4>
-    <ul>
-      <li>Hasta 20 máquinas monitoreadas</li>
-      <li>Mapa de calor en tiempo real</li>
-      <li>1 sede</li>
-      <li>Soporte por email</li>
-      <button mat-stroked-button> Buy now </button>
-    </ul>
-  </mat-card>
+  <div class="pricing-grid">
+    @for (plan of plans; track plan.key) {
+      <mat-card class="plan-card" [class.popular-card]="plan.popular">
 
-  <mat-card class = "Mid-plan">
-    <h3> Mid plan</h3>
+        @if (plan.popular) {
+          <div class="popular-badge">{{ 'pricing.popular' | translate }}</div>
+        }
 
-  </mat-card>
+        <mat-card-header>
+          <mat-card-title class="plan-name">
+            {{ ('pricing.' + plan.key + '.name') | translate }}
+          </mat-card-title>
+          <div class="plan-price">
+            <span class="price-value">{{ ('pricing.' + plan.key + '.price') | translate }}</span>
+            <span class="price-period">{{ 'pricing.perMonth' | translate }}</span>
+          </div>
+        </mat-card-header>
 
-  <mat-card class = "Platinum-plan">
-    <h3> Platinum plan</h3>
+        <mat-card-content>
+          <ul class="features-list">
+            @for (featureKey of plan.featureKeys; track featureKey) {
+              <li class="feature-item">
+                <span class="check-icon">✓</span>
+                {{ featureKey | translate }}
+              </li>
+            }
+          </ul>
+        </mat-card-content>
 
-  </mat-card>
+        <div class="card-footer">
+          @if (plan.popular) {
+            <button mat-flat-button class="cta-popular">
+              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            </button>
+          } @else {
+            <button mat-stroked-button class="cta-default">
+              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            </button>
+          }
+        </div>
 
+      </mat-card>
+    }
+  </div>
 </section>

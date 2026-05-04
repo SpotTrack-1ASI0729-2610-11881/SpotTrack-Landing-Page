@@ -8,20 +8,29 @@
   font-size: 16px;
 }
 
+
 .hero-header {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  align-items: center;
   background: #000000 ;
   color: white;
-  padding: 2%;
   position: relative;
   z-index: 1;
+  gap: 8%;
 }
 
+.language-switcher {
+  padding: 10%;
+}
+
+
 .hero-navbar{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 10%;
+  justify-content: center;
 }
 
 .navbar-button {
@@ -146,7 +155,7 @@ h1 {
   color: black;
   border: none;
   width: 300%;
-  height: 80%;
+  height: 70%;
   border-radius: 8px;
   font-family: "Istok Web";
   align-items: center;

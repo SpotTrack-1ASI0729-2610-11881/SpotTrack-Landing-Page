@@ -1,5 +1,6 @@
   <header [@headerFadeIn] class = "hero-header">
-    <h1>{{ Title }}</h1>
+    <h1 class = "title">{{ Title }}</h1>
+
     <nav [@navbarFadeIn] class = "hero-navbar">
       <button [@hoverNavBtn]="btnStates[0]()" (mouseenter)="btnStates[0].set('hovered')" (mouseleave)="btnStates[0].set('normal'
       )" class = "navbar-button">
@@ -26,9 +27,15 @@
       </button>
 
         <div class = "login-div">
-          <button class = "login-btn"> Login</button>
+            <button class = "login-btn"> Login</button>
         </div>
+
+
     </nav>
+    <div class = "language-switcher">
+      <app-language-switcher></app-language-switcher>
+    </div>
+
   </header>
 
   <section [@heroFadeIn] class = "hero-section">
