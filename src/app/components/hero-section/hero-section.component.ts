@@ -2,13 +2,14 @@ import { Component, signal } from '@angular/core';
 import { trigger, state, transition, animate, style } from '@angular/animations';
 import { Router } from '@angular/router';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'hero-section',
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.css'],
-  imports: [LanguageSwitcher],
+  imports: [LanguageSwitcher, TranslatePipe],
   animations: [
     trigger('headerFadeIn', [
       transition(':enter', [
@@ -39,6 +40,7 @@ import { LanguageSwitcher } from '../language-switcher/language-switcher';
 export class HeroSectionComponent {
   private _title: string = 'SpotTrack';
   btnStates = Array.from({ length: 4 }, () => signal<'normal' | 'hovered'>('normal'));
+  benefitKeys = [0, 1, 2, 3].map(i => `hero.benefits.${i}`);
 
   get Title() {
     return this._title;

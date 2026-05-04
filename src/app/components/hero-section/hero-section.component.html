@@ -1,62 +1,48 @@
-  <header [@headerFadeIn] class = "hero-header">
-    <h1 class = "title">{{ Title }}</h1>
+<header [@headerFadeIn] class="hero-header">
+  <h1 class="title">{{ 'nav.brand' | translate }}</h1>
 
-    <nav [@navbarFadeIn] class = "hero-navbar">
-      <button [@hoverNavBtn]="btnStates[0]()" (mouseenter)="btnStates[0].set('hovered')" (mouseleave)="btnStates[0].set('normal'
-      )" class = "navbar-button">
-        Sobre Nosotros
-      </button>
+  <nav [@navbarFadeIn] class="hero-navbar">
+    <button [@hoverNavBtn]="btnStates[0]()" (mouseenter)="btnStates[0].set('hovered')" (mouseleave)="btnStates[0].set('normal')" class="navbar-button">
+      {{ 'nav.about' | translate }}
+    </button>
+    <button [@hoverNavBtn]="btnStates[1]()" (mouseenter)="btnStates[1].set('hovered')" (mouseleave)="btnStates[1].set('normal')" class="navbar-button">
+      {{ 'nav.features' | translate }}
+    </button>
+    <button [@hoverNavBtn]="btnStates[2]()" (mouseenter)="btnStates[2].set('hovered')" (mouseleave)="btnStates[2].set('normal')" class="navbar-button">
+      {{ 'nav.pricing' | translate }}
+    </button>
+    <button [@hoverNavBtn]="btnStates[3]()" (mouseenter)="btnStates[3].set('hovered')" (mouseleave)="btnStates[3].set('normal')" class="navbar-button">
+      {{ 'contact.title' | translate }}
+    </button>
 
-      <button
-        [@hoverNavBtn]="btnStates[1]()"
-        (mouseenter)="btnStates[1].set('hovered')"
-        (mouseleave)="btnStates[1].set('normal')"
-        class="navbar-button">Features</button>
+    <div class="login-div">
+      <button class="login-btn">{{ 'nav.login' | translate }}</button>
+    </div>
+  </nav>
 
-      <button
-        [@hoverNavBtn]="btnStates[2]()"
-        (mouseenter)="btnStates[2].set('hovered')"
-        (mouseleave)="btnStates[2].set('normal')"
-        class="navbar-button">Planes</button>
+  <div class="language-switcher">
+    <app-language-switcher></app-language-switcher>
+  </div>
+</header>
 
-      <button
-        [@hoverNavBtn]="btnStates[3]()"
-        (mouseenter)="btnStates[3].set('hovered')"
-        (mouseleave)="btnStates[3].set('normal')"
-        class="navbar-button">Contáctanos
-      </button>
-
-        <div class = "login-div">
-            <button class = "login-btn"> Login</button>
-        </div>
-
-
-    </nav>
-    <div class = "language-switcher">
-      <app-language-switcher></app-language-switcher>
+<section [@heroFadeIn] class="hero-section">
+  <div class="hero-wrapper">
+    <div class="hero-wrapper-info">
+      <div class="particles-overlay"></div>
+      <h1>
+        {{ 'hero.headlineStart' | translate }}
+        <span class="shimmer-text">{{ 'hero.headlineHighlight' | translate }}</span>
+        {{ 'hero.headlineEnd' | translate }}
+      </h1>
+      <p>{{ 'hero.subheadline' | translate }}</p>
     </div>
 
-  </header>
+    <button class="start-btn">{{ 'hero.cta' | translate }}</button>
 
-  <section [@heroFadeIn] class = "hero-section">
-    <div class = "hero-wrapper">
-      <div class = "hero-wrapper-info">
-        <div class = "particles-overlay"></div>
-        <h1 > Transforma la gestión de tu <span class = "shimmer-text"> gimnasio</span> con SpotTrack </h1>
-
-        <p> SpotTrack description </p>
-
-
-      </div>
-
-      <button class = "start-btn"> Comenzar Ahora </button>
-
-        <div class = "hero-benefits">
-          <h2>Beneficio 1</h2>
-          <h2>Beneficio 2</h2>
-          <h2>Beneficio 3</h2>
-          <h2>Beneficio 4</h2>
-        </div>
-
+    <div class="hero-benefits">
+      @for (key of benefitKeys; track key) {
+        <h2>{{ key | translate }}</h2>
+      }
     </div>
-  </section>
+  </div>
+</section>
