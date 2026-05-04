@@ -8,10 +8,18 @@
     "freeDemo": "Demo Gratis"
   },
   "hero": {
-    "headline": "Transforma la gestión de tu gimnasio con tecnología inteligente",
+    "headlineStart": "Transforma la gestión de tu",
+    "headlineHighlight": "gimnasio",
+    "headlineEnd": "con tecnología inteligente",
     "subheadline": "Telemetría IoT en tiempo real para optimizar el uso de equipos, reducir tiempos de espera y maximizar la satisfacción de tus clientes",
     "cta": "Comenzar Ahora →",
-    "demo": "Ver Demo"
+    "demo": "Ver Demo",
+    "benefits": [
+      "Reduce tiempos de espera",
+      "Monitoreo 24/7",
+      "Alertas automáticas",
+      "Dashboard en tiempo real"
+    ]
   },
   "about": {
     "title": "Nosotros",
