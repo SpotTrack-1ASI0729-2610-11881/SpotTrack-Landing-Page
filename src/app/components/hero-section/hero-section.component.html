@@ -1,0 +1,62 @@
+  <header [@headerFadeIn] class = "hero-header">
+    <h1 class = "title">{{ Title }}</h1>
+
+    <nav [@navbarFadeIn] class = "hero-navbar">
+      <button [@hoverNavBtn]="btnStates[0]()" (mouseenter)="btnStates[0].set('hovered')" (mouseleave)="btnStates[0].set('normal'
+      )" class = "navbar-button">
+        Sobre Nosotros
+      </button>
+
+      <button
+        [@hoverNavBtn]="btnStates[1]()"
+        (mouseenter)="btnStates[1].set('hovered')"
+        (mouseleave)="btnStates[1].set('normal')"
+        class="navbar-button">Features</button>
+
+      <button
+        [@hoverNavBtn]="btnStates[2]()"
+        (mouseenter)="btnStates[2].set('hovered')"
+        (mouseleave)="btnStates[2].set('normal')"
+        class="navbar-button">Planes</button>
+
+      <button
+        [@hoverNavBtn]="btnStates[3]()"
+        (mouseenter)="btnStates[3].set('hovered')"
+        (mouseleave)="btnStates[3].set('normal')"
+        class="navbar-button">Contáctanos
+      </button>
+
+        <div class = "login-div">
+            <button class = "login-btn"> Login</button>
+        </div>
+
+
+    </nav>
+    <div class = "language-switcher">
+      <app-language-switcher></app-language-switcher>
+    </div>
+
+  </header>
+
+  <section [@heroFadeIn] class = "hero-section">
+    <div class = "hero-wrapper">
+      <div class = "hero-wrapper-info">
+        <div class = "particles-overlay"></div>
+        <h1 > Transforma la gestión de tu <span class = "shimmer-text"> gimnasio</span> con SpotTrack </h1>
+
+        <p> SpotTrack description </p>
+
+
+      </div>
+
+      <button class = "start-btn"> Comenzar Ahora </button>
+
+        <div class = "hero-benefits">
+          <h2>Beneficio 1</h2>
+          <h2>Beneficio 2</h2>
+          <h2>Beneficio 3</h2>
+          <h2>Beneficio 4</h2>
+        </div>
+
+    </div>
+  </section>

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx ng *)",
+      "mcp__claude_ai_Figma__get_design_context"
+    ]
+  }
+}

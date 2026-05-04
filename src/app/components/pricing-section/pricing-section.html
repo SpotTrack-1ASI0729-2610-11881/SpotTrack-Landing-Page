@@ -1,0 +1,48 @@
+<section class="pricing-section">
+  <h2 class="pricing-title">{{ 'pricing.title' | translate }}</h2>
+
+  <div class="pricing-grid">
+    @for (plan of plans; track plan.key) {
+      <mat-card class="plan-card" [class.popular-card]="plan.popular">
+
+        @if (plan.popular) {
+          <div class="popular-badge">{{ 'pricing.popular' | translate }}</div>
+        }
+
+        <mat-card-header>
+          <mat-card-title class="plan-name">
+            {{ ('pricing.' + plan.key + '.name') | translate }}
+          </mat-card-title>
+          <div class="plan-price">
+            <span class="price-value">{{ ('pricing.' + plan.key + '.price') | translate }}</span>
+            <span class="price-period">{{ 'pricing.perMonth' | translate }}</span>
+          </div>
+        </mat-card-header>
+
+        <mat-card-content>
+          <ul class="features-list">
+            @for (featureKey of plan.featureKeys; track featureKey) {
+              <li class="feature-item">
+                <span class="check-icon">✓</span>
+                {{ featureKey | translate }}
+              </li>
+            }
+          </ul>
+        </mat-card-content>
+
+        <div class="card-footer">
+          @if (plan.popular) {
+            <button mat-flat-button class="cta-popular">
+              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            </button>
+          } @else {
+            <button mat-stroked-button class="cta-default">
+              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            </button>
+          }
+        </div>
+
+      </mat-card>
+    }
+  </div>
+</section>
