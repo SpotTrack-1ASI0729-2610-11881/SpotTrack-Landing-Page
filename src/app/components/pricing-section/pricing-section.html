@@ -35,12 +35,13 @@
 
         <div class="card-footer">
           @if (plan.popular) {
-            <button mat-flat-button class="cta-popular">
-              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            <button mat-flat-button class="cta-popular" (click)="onBuyNow(plan.key)">
+              {{ 'pricing.buyNow' | translate }}
             </button>
           } @else {
-            <button mat-stroked-button class="cta-default">
-              {{ ('pricing.' + plan.key + '.cta') | translate }}
+            <button mat-stroked-button class="cta-default" (click)="onBuyNow(plan.key)">
+              {{ 'pricing.buyNow' | translate }}
+
             </button>
           }
         </div>

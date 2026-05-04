@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { TranslatePipe } from '@ngx-translate/core';
+import { StripeService } from '../../services/stripe';
 
 interface Plan {
   key: string;
@@ -33,4 +34,10 @@ export class PricingSection {
       featureKeys: [0, 1, 2, 3, 4].map(i => `pricing.platinum.features.${i}`),
     },
   ];
+
+  private stripeService = inject(StripeService);
+
+  async onBuyNow(planKey: string) : Promise<void> {
+    await this.stripeService.redirectToCheckout(planKey);
+  }
 }

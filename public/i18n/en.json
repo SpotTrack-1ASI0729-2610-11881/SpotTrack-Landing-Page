@@ -60,7 +60,7 @@
     "title": "Plans & Pricing",
     "popular": "Most Popular",
     "perMonth": "/mo",
-    "butNow" : "Buy Now",
+    "buyNow" : "Buy Now",
     "basic": {
       "name": "Basic",
       "price": "$69",
