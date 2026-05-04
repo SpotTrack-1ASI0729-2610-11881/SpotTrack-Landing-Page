@@ -1,0 +1,14 @@
+* {
+  font-family: 'Istok Web';
+}
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  color : white;
+  padding: 5%;
+  gap: 1%;
+}
+
+.basic-plan {
+  padding: 24px;
+}
