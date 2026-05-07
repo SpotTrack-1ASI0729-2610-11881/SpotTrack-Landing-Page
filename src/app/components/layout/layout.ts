@@ -3,7 +3,7 @@
     import { PricingSection } from '../pricing-section/pricing-section';
     import { ContactComponent } from '../contact-section/contact-section.component';
     import { FeaturesSectionComponent } from '../features-section/features-section.component';
-
+    import { FooterSection } from '../footer-section/footer-section.component';
 
 
 @Component({
@@ -12,7 +12,8 @@
     HeroSectionComponent,
     FeaturesSectionComponent,
     PricingSection,
-    ContactComponent],
+    ContactComponent,
+    FooterSection],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
