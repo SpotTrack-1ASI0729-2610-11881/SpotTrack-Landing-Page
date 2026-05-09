@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'contact-section',
@@ -35,7 +36,24 @@ export class ContactSection implements OnInit {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Datos enviados:', this.contactForm.value);
+      const serviceID = 'service_8z4yvrk'; // Obtén esto en EmailJS
+      const templateID = 'template_muervr3';
+      const publicKey = '6RLuwrQZ4Qh9K4vh4';
+
+      const templateParams = {
+        from_name: this.contactForm.value.name,
+        from_email: this.contactForm.value.email,
+        message: this.contactForm.value.message
+      };
+
+      emailjs.send(serviceID, templateID, templateParams, publicKey)
+        .then((response) => {
+          console.log('¡ÉXITO!', response.status, response.text);
+          this.contactForm.reset();
+          // Aquí podrías mostrar un mensaje de éxito al usuario
+        }, (err) => {
+          console.log('FALLÓ...', err);
+        });
     }
   }
 }
