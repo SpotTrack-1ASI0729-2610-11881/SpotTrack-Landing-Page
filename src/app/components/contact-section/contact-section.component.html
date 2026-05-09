@@ -1,32 +1,32 @@
 <section class="contact-section" id="contacto">
   <div class="container">
-    <h2 class="section-title">Contacto</h2>
+    <h2 class="section-title">{{'contact.title' | translate}}</h2>
 
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Nombre</mat-label>
-        <input matInput formControlName="name" placeholder="Tu nombre completo">
+        <mat-label>{{ 'contact.name.label' | translate }}</mat-label>
+        <input matInput formControlName="name" [placeholder]="'contact.name.placeholder' | translate">
         <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-          El nombre es obligatorio
+          {{'contact.name.error'|translate}}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email" placeholder="hola@ejemplo.com">
+        <mat-label>{{ 'contact.email.label' | translate }}</mat-label>
+        <input matInput type="email" formControlName="email" [placeholder]="'contact.email.placeholder' | translate">
         <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
-          Ingresa un correo válido
+          {{'contact.email.error'|translate}}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Mensaje</mat-label>
-        <textarea matInput rows="5" formControlName="message" placeholder="Cuéntanos sobre tu gimnasio"></textarea>
+        <mat-label>{{ 'contact.message.label' | translate }}</mat-label>
+        <textarea matInput rows="5" formControlName="message" [placeholder]="'contact.message.placeholder' | translate"></textarea>
       </mat-form-field>
 
       <button mat-raised-button class="btn-submit" type="submit" [disabled]="contactForm.invalid">
-        Enviar
+        {{ 'contact.submit' | translate }}
       </button>
 
     </form>

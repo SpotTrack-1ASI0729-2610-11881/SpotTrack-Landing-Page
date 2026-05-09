@@ -109,11 +109,13 @@
     "title": "Contacto",
     "name": {
       "label": "Nombre",
-      "placeholder": "Tu nombre completo"
+      "placeholder": "Tu nombre completo",
+      "error": "El nombre es obligatorio"
     },
     "email": {
       "label": "Email",
-      "placeholder": "tu@email.com"
+      "placeholder": "tu@email.com",
+      "error": "Ingresa un correo válido"
     },
     "message": {
       "label": "Mensaje",
