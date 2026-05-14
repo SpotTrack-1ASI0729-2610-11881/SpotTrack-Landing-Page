@@ -67,5 +67,9 @@ export class HeroSectionComponent {
   }
 
   protected readonly onmouseenter = onmouseenter;
+
+  navigateToLogin(): void {
+    window.location.href = 'https://blue-beach-0a5eb2e10.7.azurestaticapps.net/';
+  }
 }
 
