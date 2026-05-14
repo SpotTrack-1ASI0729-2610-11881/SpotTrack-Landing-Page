@@ -76,6 +76,7 @@ h1 {
   will-change: transform;
   transform-style: preserve-3d;
   z-index: 0; /* Asegúrate que estén al fondo */
+  pointer-events: none;
 }
 
 /* --- Capa 1: Fondo Lejano --- */
