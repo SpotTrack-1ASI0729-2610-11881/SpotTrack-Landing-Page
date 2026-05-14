@@ -39,6 +39,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class HeroSectionComponent {
   private _title: string = 'SpotTrack';
+  readonly appUrl = 'https://blue-beach-0a5eb2e10.7.azurestaticapps.net';
+
   btnStates = Array.from({ length: 4 }, () => signal<'normal' | 'hovered'>('normal'));
   benefitKeys = [0, 1, 2, 3].map(i => `hero.benefits.${i}`);
 
@@ -49,6 +51,19 @@ export class HeroSectionComponent {
   public setHover(index: number, isHovered: boolean): void {
     const newState = isHovered ? 'hovered' : 'normal';
     this.btnStates[index].set(newState);
+  }
+
+  scrollToSection(id: string): void {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  navigateToApp(): void {
+    window.open(this.appUrl, '_blank');
   }
 
   protected readonly onmouseenter = onmouseenter;
